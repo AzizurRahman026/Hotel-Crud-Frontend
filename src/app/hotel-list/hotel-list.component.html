@@ -1,1 +1,27 @@
-<p>hotel-list works!</p>
+<div>
+<input type="text" placeholder="Search hotels..." [(ngModel)]="searchQuery" />
+    <button (click)="searchHotels()">Search</button>
+  </div>
+  
+  <table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Actions</th>
+    </tr>
+    @for (hotel of hotels; track hotel.id) {
+    <tr>
+        <td>{{ hotel.id }}</td>
+        <td>{{ hotel.name }}</td>
+      <td>{{ hotel.city }}</td>
+      <td>
+        <button [routerLink]="['/edit', hotel.id]">Edit</button>
+        <button (click)="deleteHotel(hotel.id)">Delete</button>
+      </td>
+    </tr>
+    }
+  </table>
+  
+  <button routerLink="/add">Add New Hotel</button>
+  

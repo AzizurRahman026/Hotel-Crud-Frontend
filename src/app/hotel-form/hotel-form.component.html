@@ -1,0 +1,11 @@
+<form (ngSubmit)="saveHotel()">
+    <label for="name">Hotel Name:</label>
+    <input type="text" id="name" [(ngModel)]="hotel.name" name="name" required />
+  
+    <label for="city">City:</label>
+    <input type="text" id="city" [(ngModel)]="hotel.city" name="city" required />
+  
+    <button type="submit">Save</button>
+    <button type="button" (click)="router.navigate(['/'])">Cancel</button>
+  </form>
+  
