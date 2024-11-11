@@ -1,5 +1,34 @@
 <h1>Hello, {{ title }}</h1>
 
-<app-hotel-list></app-hotel-list>
+<div>
+  <p>Hotel info : </p>
+  <ul>
+    @for(hotel of Hotels; track hotel.id) {
+      {{ hotel.id }}. {{ hotel.name }} <br>
+    }
+  </ul>
+</div>
 
-<router-outlet />
+
+
+<div class="container">
+    <h2>Hotel List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>City</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(hotel of Hotels; track hotel.id) {
+            <tr>
+            <td>{{ hotel.id }}</td>
+            <td>{{ hotel.name }}</td>
+            <td>{{ hotel.city }}</td>
+            </tr>
+        }
+      </tbody>
+    </table>
+  </div>
